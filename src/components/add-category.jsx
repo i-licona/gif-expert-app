@@ -12,7 +12,7 @@ export const AddCategory = ({ addCategory }) =>{
     // quitar recarga de por evento
     event.preventDefault();
     // validar que el input no este vacio
-    if (inputValue == '') {
+    if (inputValue == '' || inputValue == null || inputValue == undefined) {
       return;
     }
     // guardar busqueda en el arreglo
@@ -25,7 +25,7 @@ export const AddCategory = ({ addCategory }) =>{
   }
   /* template html */
   return(
-    <form onSubmit={ (event) => saveChanges(event) }>
+    <form onSubmit={ (event) => saveChanges(event) } aria-label = 'form'>
       <input
         type='text'
         placeholder='Buscar gifs'
